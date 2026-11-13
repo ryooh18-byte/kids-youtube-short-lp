@@ -147,6 +147,11 @@
     /* ===== このLP専用の部品 ===== */
     .story p.lead{color:var(--muted);text-align:center;max-width:640px;margin:0 auto 18px}
     .story .note{max-width:640px;margin:22px auto 0}
+    /* できあがりの例（横向きの動画の中央を、縦型9:16の枠で見せる） */
+    .example-video{margin:30px auto 0;max-width:300px;text-align:center}
+    .example-video .example-title{margin:0 0 12px;font-family:var(--serif);font-size:1.08rem;font-weight:700;color:var(--ink)}
+    .example-video video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:18px;background:#000;box-shadow:0 14px 34px rgba(61,55,45,.16)}
+    .example-video figcaption{margin-top:12px;font-size:.78rem;line-height:1.75;color:var(--muted)}
     .worries{list-style:none;padding:0;margin:0 auto;max-width:560px;display:grid;gap:12px}
     .worries li{padding:14px 18px;border-radius:16px;background:var(--card);border:1px solid var(--line);color:var(--ink);font-size:.95rem;line-height:1.7}
     .answer{margin:34px 0 0;text-align:center}
@@ -241,7 +246,15 @@ AIで副収入を得るための方法を、
         <p class="lead">絵が描けなくても、<br>動画の編集が苦手でも大丈夫です。</p>
         <p class="lead">ChatGPTがお話を考えて、Picsartが動画にして、CapCutでつなぐ。このガイドでは、子ども向けの30秒の3Dアニメ動画を作って、YouTubeショートに投稿するまでを、5つのステップで紹介します。</p>
         <p class="lead">作った動画は、お孫さんや娘さんにも見せられます。<br>趣味と実益を兼ねた副業です。</p>
-        <div class="note">動画を公開するところまでは、むずかしくありません。ただ、収益につなげるには、ある程度の作業が必要です（くわしくは、STEP 5で）。</div>
+        <figure class="example-video">
+          <p class="example-title">できあがりの例</p>
+          <video controls controlslist="nofullscreen" playsinline preload="metadata" aria-label="ドラゴンとクマが花畑にいて、シャボン玉が飛ぶ、AIで作った3Dアニメ動画の例（10秒）">
+            <source src="./assets/example-video.mp4" type="video/mp4">
+            お使いの画面では、動画を再生できません。
+          </video>
+          <figcaption>※シーン1の指示文を使って、動画AIで作った例です（10秒）。横向きの動画の中央を、縦型に切り出しています。</figcaption>
+        </figure>
+        <div class="note">動画を公開するところまでは、むずかしくありません。ただ、Picsartで動画を作るには有料プランが必要で、収益につなげるには、ある程度の作業も必要です（くわしくは、STEP 1とSTEP 5で）。</div>
       </div>
     </section>
 
@@ -312,8 +325,8 @@ AIで副収入を得るための方法を、
               </ul>
             </li>
           </ol>
-          <p class="free-line">まずは無料で始められます。</p>
-          <div class="note">※Picsartは、新しく登録すると、無料で使えるクレジット（動画を作るためのポイント）がもらえる場合があります。もらえる量は変わることがあり、作れる動画の本数は限られます。使い切ったら、有料プランに申し込むと続けられます。料金は、Picsartの公式ページでご確認ください。ChatGPTとCapCutで無料で使える範囲も、それぞれの公式ページでご確認ください。</div>
+          <p class="free-line">ChatGPTとCapCutは、無料で始められます。Picsartで動画を作るには、有料プランが必要です。</p>
+          <div class="note">※2026年11月現在：Picsartは、新しく登録しただけでは、動画を作るためのクレジット（ポイント）が0のことがあります。動画を作るには、有料プランへの申し込みが必要です。料金は、Picsartの公式ページでご確認ください。ChatGPTとCapCutで無料で使える範囲も、それぞれの公式ページでご確認ください。</div>
         </article>
 
         <!-- STEP 2 -->
@@ -429,20 +442,27 @@ AIで副収入を得るための方法を、
             <li>Picsartの<span class="nw">「AI Playground」</span>を開いて、ログインします。
               <ul class="sub">
                 <li><a href="https://picsart.com/ai-playground/app" target="_blank" rel="noopener noreferrer">PicsartのAI Playground</a></li>
+                <li>画面が英語のときは、Chromeで右クリックして<span class="nw">「日本語に翻訳」</span>を選ぶと、日本語になります。</li>
+                <li>最初に出る質問は、動画の種類に<span class="nw">「アニメ」</span>と<span class="nw">「SNS向け動画」</span>、本数に<span class="nw">「週5本未満」</span>を選んで、進みます。</li>
               </ul>
             </li>
-            <li><span class="nw">「VIDEO（動画）」</span>を選びます。</li>
-            <li>動画を作るAIの種類を選びます（Seedanceなど。画面に出る名前は、変わることがあります）。</li>
-            <li>縦型（9:16）、長さ10秒に設定します。</li>
-            <li>STEP 3の、<b>シーン1の英語の指示文</b>を貼ります。</li>
-            <li>必要なクレジットを確認して、<span class="nw">「Generate」</span>を押します。</li>
+            <li>入力欄の左下で、<span class="nw">「動画」</span>が選ばれていることを確かめます（最初から選ばれています）。上にある小さな<span class="nw">「VIDEO」</span>は、自分の動画を読み込むボタンなので、押しません。</li>
+            <li>動画を作るAIの種類は、そのままで大丈夫です（画面では<span class="nw">「Seedance 2.5」</span>）。</li>
+            <li>右下の<span class="nw">「1080p｜16:9｜15秒」</span>を押して、<b>縦型（9:16）と10秒</b>に変えます。</li>
+            <li><span class="nw">「下書き」</span>のスイッチを、オンにします。</li>
+            <li>STEP 3の、<b>シーン1の英語の指示文</b>を、入力欄に貼ります。</li>
+            <li>必要なクレジットを確認して、動画を作るボタンを押します。</li>
             <li>同じ操作を、シーン2、シーン3でも行います（合わせて3回）。</li>
-            <li>できた動画を、1つずつ<b>パソコンに保存（ダウンロード）</b>します。</li>
+            <li>気に入った動画は、下書きから高画質に仕上げ直して（画面の案内に沿って進めます）、1つずつ<b>パソコンに保存（ダウンロード）</b>します。</li>
           </ol>
-          <div class="note">※クレジットは、動画を作るたびに減ります。キャラクターの見た目が、シーンごとに大きくずれたときは、同じシーンを、もう一度作ります。</div>
+          <div class="note">
+            <p>※クレジットは、動画を作るたびに減ります。Picsartの公式ページでは、下書き（低画質）で試してから、気に入ったものを高画質で仕上げると、クレジットを節約できると説明されています。</p>
+            <p>※キャラクターの見た目が、シーンごとに大きくずれたときは、同じシーンを、もう一度作ります。</p>
+            <p>※英語の指示文は、ほかの動画AIでも使えることがあります。ただし、長さや縦型の設定は、アプリごとに違います。使う前に、そのアプリの料金と利用規約をご確認ください。</p>
+          </div>
 
           <p class="group-label">B．CapCutで、1本にまとめる</p>
-          <ol class="num-list" style="counter-reset:n 8">
+          <ol class="num-list" style="counter-reset:n 9">
             <li>CapCut（パソコン版）で、新しいプロジェクトを作ります。</li>
             <li>保存した3つの動画を読み込んで、シーン1→2→3の順に並べます。</li>
             <li>ナレーションを入れます。<b>おすすめは、自分の声で録音すること</b>です。STEP 3で出た日本語のナレーションを、読み上げます。</li>
